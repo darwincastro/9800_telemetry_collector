@@ -21,7 +21,7 @@ The Docker Compose file automates the deployment of these components, streamlini
 1. **Clone the Repo**
 
 ```bash
-git clone http://url
+git clone http://github.com/darwincastro/9800_telemetry_collector.git
 ```
 
 2. **Navigate to the Directory**
@@ -46,7 +46,7 @@ sudo ./build.sh start
 
 5. **Configure Wireless Controller Telemetry**
 
-Refer to [this link](url) for an example of wireless controller telemetry configuration.
+Refer to [this link](https://github.com/darwincastro/9800_telemetry_collector/blob/master/examples/subscription.cfg) for an example of wireless controller telemetry configuration.
 
 6. **Access GUI**
 
