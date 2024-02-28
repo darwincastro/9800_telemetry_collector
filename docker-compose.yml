@@ -1,0 +1,58 @@
+version: "3"
+services:
+  influxdb:
+    image: ${INFLUXDB_IMAGE}
+    container_name: influxdb
+    restart: always
+    ports:
+      - ${INFLUX_PORT}:${INFLUX_PORT}
+    networks:
+      - telemetry
+    volumes:
+      - ${INFLUXDB_CONFIG}:/etc/influxdb2
+      - ${INFLUXDB_ENGINE}:/var/lib/influxdb2
+    env_file:
+      - .env
+
+  telegraf:
+    image: ${TELEGRAF_IMAGE}
+    container_name: telegraf
+    restart: always
+    ports:
+      - ${TELEGRAF_HOST_PORT}:${TELEGRAF_HOST_PORT}
+    networks:
+      - telemetry   
+    volumes:
+      - ${TELEGRAF_CONFIG}:/etc/telegraf:ro
+    env_file:
+      - .env
+    entrypoint: /entrypoint.sh -config /etc/telegraf/telegraf.conf -config-directory /etc/telegraf/telegraf.d
+
+  grafana:
+    image: ${GRAFANA_IMAGE}
+    container_name: grafana
+    restart: always
+    ports:
+      - ${GRAFANA_PORT}:${GRAFANA_PORT}
+    networks:
+      - telemetry
+    volumes:
+      - ${GRAFANA_PROVISIONING}:/etc/grafana/provisioning:ro
+      - ${GRAFANA_DASHBOARDS}:/etc/grafana/dashboards
+      - ${GRAFANA_CONFIG}/grafana.ini:/etc/grafana/grafana.ini:ro
+      - grafana-volume:/var/lib/grafana
+    environment:
+      - TZ=America/Chicago
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_INSTALL_IMAGE_RENDERER_PLUGIN=true
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWD}
+    env_file:
+      - .env
+volumes:
+  grafana-volume:
+    external: true
+networks:
+  telemetry:
+    name: telemetry
