@@ -1,4 +1,4 @@
-# 9800 Telemetry Collector
+# 9800 Telemetry TIG-Stack
 
 ## Introduction
 
