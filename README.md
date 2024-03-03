@@ -56,8 +56,11 @@ Refer to <a href="https://github.com/darwincastro/9800_telemetry_collector/blob/
 
 6. **Access GUI**
 
-   - Grafana: `http://<ip_address_of_host>:3000` (Login: admin/admin123)
-   - InfluxDB: `http://<ip_address_of_host>:8086` (Login: admin/admin123)
+   - Grafana: `http://<ip_address_of_host>:3000` (Login: admin/C1sco12345)
+   - InfluxDB: `http://<ip_address_of_host>:8086` (Login: admin/C1sco12345)
+
+> [!NOTE]  
+> Do Not Use LOCALHOST/127.0.0.1 - You Must Use a Reachable IP Address
 
 7. **Pre-built Dashboards**
 
