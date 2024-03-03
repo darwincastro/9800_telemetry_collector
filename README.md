@@ -12,8 +12,7 @@ The Docker Compose file automates the deployment of these components, streamlini
 
 ## Requirements
 
-- docker-ce
-- docker-compose version >= 2.0.0
+- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/)
 - Linux distribution (For MacOS, see Known Issues)
 
 ## Steps to Get It Up and Running
