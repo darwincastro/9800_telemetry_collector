@@ -57,8 +57,6 @@ Refer to <a href="https://github.com/darwincastro/9800_telemetry_collector/blob/
 
    - Demo 9800CL
    - Demo 9800L
-   - Demo 9840
-   - Demo 9880
 
 ## Troubleshooting
 
@@ -75,6 +73,48 @@ Ensure containers stay up:
 
 ```bash
 # Point docker file to tail -f /dev/null if no entry point or service is running
+```
+Confirm that Telegraf is receiving telemetry data from the Cisco C9800:
+
+```bash
+docker exec -it telegraf tail -f /tmp/metrics.out
+```
+
+Check the logs of each container:
+
+```bash
+docker logs influxdb
+docker logs telegraf
+docker logs grafana
+```
+
+Check telegraf's internal metrics:
+
+```bash
+# Open and edit telegraf.conf
+cd /etc/telegraf
+nano telegraf.conf
+
+# Add the following lines at the end to monitor the health
+[[inputs.internal]]
+  collect_memstats = true
+
+[agent]
+  debug = true
+# Save the changes
+
+# Display logs for Tegraf
+docker logs telegraf
+```
+
+> Addressing these points should help you identify where the problem is occurring in your TIG stack setup.
+
+Cleanup:
+
+If you want to remove the TIG-Stack containers or if something went wrong during the installation, you can run the following script:
+
+```bash
+sudo ./cleanup.sh
 ```
 
 **Wireless Controller:**
