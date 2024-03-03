@@ -15,6 +15,13 @@ The Docker Compose file automates the deployment of these components, streamlini
 - [Docker Engine](https://docs.docker.com/engine/install/ubuntu/)
 - Linux distribution (For MacOS, see Known Issues)
 
+> [!IMPORTANT]  
+> If you are using Docker for deploying this TIG-Stack setup, please ensure that your Docker Compose version is equal to or greater than 2.0.0. Older versions of Docker Compose may not fully support the configuration syntax used in this setup.
+> You can check your Docker Compose version by running:
+> ```bash
+> docker-compose --version
+> ```
+
 ## Steps to Get It Up and Running
 
 1. **Clone the Repo**
@@ -106,6 +113,7 @@ nano telegraf.conf
 docker logs telegraf
 ```
 
+> [!TIP]
 > Addressing these points should help you identify where the problem is occurring in your TIG stack setup.
 
 Cleanup:
