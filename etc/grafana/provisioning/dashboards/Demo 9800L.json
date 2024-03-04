@@ -1339,7 +1339,7 @@
           "uid": "influxdb01"
         },
         "definition": "buckets()",
-        "hide": 0,
+        "hide": 2,
         "includeAll": false,
         "multi": false,
         "name": "Collector",
