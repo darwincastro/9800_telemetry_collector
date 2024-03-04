@@ -66,6 +66,7 @@ Refer to <a href="https://github.com/darwincastro/9800_telemetry_collector/blob/
 
    - Demo 9800CL
    - Demo 9800L
+   - Demo 9840
 
 ## Troubleshooting
 
