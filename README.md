@@ -52,7 +52,7 @@ sudo ./build.sh start
 
 5. **Configure Wireless Controller Telemetry**
 
-Refer to <a href="https://github.com/darwincastro/9800_telemetry_collector/blob/master/examples/subscription.cfg" target="_blank">this link</a> for an example of wireless controller telemetry configuration.
+Refer to <a href="https://github.com/darwincastro/9800_telemetry_collector/blob/master/examples/" target="_blank">this link</a> for an example of wireless controller telemetry configuration.
 
 6. **Access GUI**
 
