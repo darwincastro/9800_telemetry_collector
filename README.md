@@ -10,6 +10,9 @@ This repository facilitates the setup of a telemetry collection system tailored 
 
 The Docker Compose file automates the deployment of these components, streamlining the process to be zero-touch. It includes provisions for creating InfluxDB buckets and Grafana dashboards.
 
+## Screenshot
+![9840_demo_dashboard](https://github.com/darwincastro/9800_telemetry_collector/blob/master/examples/9840-Demo-Dasboard.png)
+
 ## Requirements
 
 - [Docker Engine](https://docs.docker.com/engine/install/ubuntu/)
