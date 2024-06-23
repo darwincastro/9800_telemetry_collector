@@ -163,6 +163,11 @@ Verify telemetry subscription states:
 show telemetry internal subscription all stats
 ```
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+
 ## Known Issues
 
 - MacOS uses the BSD version of sed by default, which doesn't work with this script. Use `brew install gnu-sed` to install the GNU version of sed if running this script on MacOS.
